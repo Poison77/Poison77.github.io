@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="随笔,Github,">
+  <meta name="keywords" content="Linux,网络安全,">
 
 
 
@@ -90,22 +90,20 @@
 
 
 
-<meta name="description" content="关于域名经过我自己的捣鼓，发现网站是可以访问了，但是地址有点太长，就想着换上自己的简短域名方便大家记忆。So，就有了这篇博客… What？什么是域名网域名称简称域名、网域 (Domain Name)，是由一串用点分隔的字符组成的互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。可以理解为域名是为了方便记忆以取代IP地址的一个代称，一个域名对应一个IP地址（理论上是可以是多">
-<meta name="keywords" content="随笔,Github">
+<meta name="description" content="Linux服务器登录方法一般我们会通过账户、密码的方式远程运维Linux服务器，但是密码有被暴力破解的可能，所以一般采用下述两种方式：  禁用22端口，启用其他端口用于 SSH 登录，或禁用 root 账户； 为服务器设置密钥，通过密钥登录。  原理：利用密钥生成器制作一对密钥：公钥和私钥，将公钥添加到服务器的某个账户上，将私钥下载到本地；然后在客户端利用私钥进行认证和登录。也可以将公钥复制到其他">
+<meta name="keywords" content="Linux,网络安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为GitHub Pages添加域名解析">
-<meta property="og:url" content="https://poison77.github.io/2019/04/27/cname-for-GitHubPages/index.html">
+<meta property="og:title" content="为SSH设置密钥登录">
+<meta property="og:url" content="https://poison77.github.io/2020/05/30/ssh-key/index.html">
 <meta property="og:site_name" content="灰灰の小站">
-<meta property="og:description" content="关于域名经过我自己的捣鼓，发现网站是可以访问了，但是地址有点太长，就想着换上自己的简短域名方便大家记忆。So，就有了这篇博客… What？什么是域名网域名称简称域名、网域 (Domain Name)，是由一串用点分隔的字符组成的互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。可以理解为域名是为了方便记忆以取代IP地址的一个代称，一个域名对应一个IP地址（理论上是可以是多">
+<meta property="og:description" content="Linux服务器登录方法一般我们会通过账户、密码的方式远程运维Linux服务器，但是密码有被暴力破解的可能，所以一般采用下述两种方式：  禁用22端口，启用其他端口用于 SSH 登录，或禁用 root 账户； 为服务器设置密钥，通过密钥登录。  原理：利用密钥生成器制作一对密钥：公钥和私钥，将公钥添加到服务器的某个账户上，将私钥下载到本地；然后在客户端利用私钥进行认证和登录。也可以将公钥复制到其他">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://poison77.github.io/uploads/domain01.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/domain02.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/domain03.png">
-<meta property="og:updated_time" content="2020-03-27T03:32:01.649Z">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/04/ssh_key_01.png">
+<meta property="og:updated_time" content="2020-06-03T17:46:04.943Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为GitHub Pages添加域名解析">
-<meta name="twitter:description" content="关于域名经过我自己的捣鼓，发现网站是可以访问了，但是地址有点太长，就想着换上自己的简短域名方便大家记忆。So，就有了这篇博客… What？什么是域名网域名称简称域名、网域 (Domain Name)，是由一串用点分隔的字符组成的互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。可以理解为域名是为了方便记忆以取代IP地址的一个代称，一个域名对应一个IP地址（理论上是可以是多">
-<meta name="twitter:image" content="https://poison77.github.io/uploads/domain01.png">
+<meta name="twitter:title" content="为SSH设置密钥登录">
+<meta name="twitter:description" content="Linux服务器登录方法一般我们会通过账户、密码的方式远程运维Linux服务器，但是密码有被暴力破解的可能，所以一般采用下述两种方式：  禁用22端口，启用其他端口用于 SSH 登录，或禁用 root 账户； 为服务器设置密钥，通过密钥登录。  原理：利用密钥生成器制作一对密钥：公钥和私钥，将公钥添加到服务器的某个账户上，将私钥下载到本地；然后在客户端利用私钥进行认证和登录。也可以将公钥复制到其他">
+<meta name="twitter:image" content="http://img.yaohui.world/images/2020/06/04/ssh_key_01.png">
 
 
 
@@ -135,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="https://poison77.github.io/2019/04/27/cname-for-GitHubPages/">
+  <link rel="canonical" href="https://poison77.github.io/2020/05/30/ssh-key/">
 
 
 
@@ -151,7 +149,7 @@
 
 
 
-  <title>为GitHub Pages添加域名解析 | 灰灰の小站</title>
+  <title>为SSH设置密钥登录 | 灰灰の小站</title>
   
 
 
@@ -332,7 +330,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://poison77.github.io/2019/04/27/cname-for-GitHubPages/">
+    <link itemprop="mainEntityOfPage" href="https://poison77.github.io/2020/05/30/ssh-key/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Poison">
@@ -349,7 +347,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">为GitHub Pages添加域名解析</h1>
+          <h1 class="post-title" itemprop="name headline">为SSH设置密钥登录</h1>
         
 
         <div class="post-meta">
@@ -361,8 +359,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-27T23:26:02+08:00">
-                2019-04-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-30T21:17:44+08:00">
+                2020-05-30
               </time>
             
 
@@ -384,8 +382,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -402,8 +400,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/27/cname-for-GitHubPages/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/27/cname-for-GitHubPages/" itemprop="commentCount"></span>
+                <a href="/2020/05/30/ssh-key/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/30/ssh-key/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -430,7 +428,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  921
+                  1.9k
                 </span>
               
 
@@ -446,7 +444,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  8
                 </span>
               
             </div>
@@ -467,24 +465,65 @@
       
 
       
-        <h2 id="关于域名"><a href="#关于域名" class="headerlink" title="关于域名"></a>关于域名</h2><p>经过我自己的捣鼓，发现网站是可以访问了，但是地址有点太长，就想着换上自己的简短域名方便大家记忆。So，就有了这篇博客…</p>
-<h3 id="What？什么是域名"><a href="#What？什么是域名" class="headerlink" title="What？什么是域名"></a>What？什么是域名</h3><p>网域名称简称域名、网域 <strong>(Domain Name)</strong>，是由一串用点分隔的字符组成的互联网上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。可以理解为域名是为了方便记忆以取代IP地址的一个代称，一个域名对应一个IP地址（理论上是可以是多对多关系），但是通常情况下 <strong>一个域名同一时刻只能对应一个公网IP地址</strong> 。比如我的网站原来的网址是 <em>poison77.giuhub.io</em> 使用了域名解析后访问 <em>poison77.com</em> 即可跳转到我的博客地址，这是通过 <a href="https://baike.baidu.com/item/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F" target="_blank" rel="noopener">域名系统</a>(DNS)解析实现的，当然你们要做的就只有记住 <em>poison77.com</em> 然后将它输入到你们浏览器的地址栏回车就好了😏</p>
-<h3 id="Where-在那里注册域名"><a href="#Where-在那里注册域名" class="headerlink" title="Where?在那里注册域名"></a>Where?在那里注册域名</h3><p>如果你想要注册一个域名，就需要找到一个域名注册商，帮你向CANN申报。如今国内比较有名的有<a href="https://wanwang.aliyun.com/?spm=5176.8142029.735711.62.54216d3ehTL76e" target="_blank" rel="noopener">阿里云</a>、<a href="https://dnspod.cloud.tencent.com/?from=qcloudHpProductDns" target="_blank" rel="noopener">腾讯云</a>等等；国外的著名域名注册商有<a href="https://www.godaddy.com/" target="_blank" rel="noopener">Godaddy</a>、<a href="https://www.name.com/zh-cn/" target="_blank" rel="noopener">name</a>、<a href="https://www.enom.com/" target="_blank" rel="noopener">enom</a>、<a href>domainsite</a>….</p>
-<p>一般推荐大家使用国内的解析，因为速度较快，但是国外的域名网站可能会比较便宜，emmmmm，毕竟鱼和熊掌不可得兼。😡</p>
-<p>注册过程也很简单，但是这里提醒大家一个域名将会代表你的信息或者喜好很长一段时间，所以要注意它读起来有没有什么特别的含义，不要太关心它的商业价值。选中你喜欢的下单即可，然后可以在自己的注册域名所在网站的账户中看到购买的域名，如果是在国内注册的，不要忘了实名认证，不然的话解析是不可用的，具体过程参考各自网站的实名认证规则。</p>
-<h3 id="How？如何使用购买的域名"><a href="#How？如何使用购买的域名" class="headerlink" title="How？如何使用购买的域名"></a>How？如何使用购买的域名</h3><p>如果你购买了自己的域名，在解析域名之前首先要知道自己要解析的网络地址，就是你的VPS的IP地址或者你网站以前的地址，这里我以腾讯云为例：</p>
+        <h2 id="Linux服务器登录方法"><a href="#Linux服务器登录方法" class="headerlink" title="Linux服务器登录方法"></a>Linux服务器登录方法</h2><p>一般我们会通过账户、密码的方式远程运维Linux服务器，但是密码有被暴力破解的可能，所以一般采用下述两种方式：</p>
+<ol>
+<li>禁用22端口，启用其他端口用于 SSH 登录，或禁用 root 账户；</li>
+<li>为服务器设置密钥，通过密钥登录。</li>
+</ol>
+<p>原理：利用密钥生成器制作一对密钥：公钥和私钥，将公钥添加到服务器的某个账户上，将私钥下载到本地；然后在客户端利用私钥进行认证和登录。也可以将公钥复制到其他账户甚至主机，使用同一个私钥登录。</p>
+<p><em>注意：本文所有命令基于 CentOS 7.8 操作</em></p>
+<h2 id="加固-SSH-账户密码登录"><a href="#加固-SSH-账户密码登录" class="headerlink" title="加固 SSH 账户密码登录"></a>加固 SSH 账户密码登录</h2><h3 id="修改默认端口"><a href="#修改默认端口" class="headerlink" title="修改默认端口"></a>修改默认端口</h3><p>例：此处将远程登录端口修改为3389</p>
+<p>1、查看端口是否已被占用，无返回结果表示没有被占用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@ostak02 ~]<span class="comment"># netstat -anp | grep 3389</span></span><br><span class="line">[root@ostak02 ~]<span class="comment"># yum install net-tools  # 如果上述命令执行失败，则需要安装 net-tools</span></span><br></pre></td></tr></table></figure>
+<p>2、修改 SSH 端口为 3389，此处可以保留 22 端口，避免修改失败导致无法登录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># If you want to change the port on a SELinux system, you have to tell SELinux about this change.</span></span><br><span class="line"><span class="comment"># semanage port -a -t ssh_port_t -p tcp #PORTNUMBER</span></span><br><span class="line">Port 22</span><br><span class="line">Port 3389   <span class="comment"># 增加3389端口</span></span><br><span class="line"><span class="comment">#AddressFamily any</span></span><br><span class="line"><span class="comment">#ListenAddress 0.0.0.0</span></span><br><span class="line"><span class="comment">#ListenAddress ::</span></span><br></pre></td></tr></table></figure>
+<p>该配置文件 sshd_config 中其他参数的作用：</p>
 <ul>
-<li><p>首先，对我购买的域名进行解析操作：<br><img src="/uploads/domain01.png" alt="解析域名"></p>
-</li>
-<li><p>打开每个选项都有详细的说明，这里我们选择主机记录、记录类型、线路类型、记录值TTL保存即可，这里如果要为GitHub Pages的静态网站解析域名，只需要添加一条 @ 和 www 的CNAME解析即可<br><img src="/uploads/domain02.png" alt="选择参数"></p>
-</li>
-<li><p>接着来到Github页面，打开你托管网站的仓库，进入找到Settings，在此项中下拉找到GitHub Pages,将你的域名填入Custom Domain选项中Save即可,可以看到上面的提示变成了 <code>Your site is published at https://domainname.com/</code>,表示成功。记录添加完成后一般要等待2-10分钟就可以使用你自己的域名访问网站啦！<br><img src="/uploads/domain03.png" alt="添加域名"></p>
-</li>
-<li><p>这个强制使用HTTPS访问在第一次添加域名的时候是不可勾选的，需要等第一次解析成功十几分钟后即可勾选，选上之后就可以使用更安全的https连接到你的网站了。</p>
-</li>
+<li><strong>PermitRootLogin no</strong>          // 禁止 Root 用户登录</li>
+<li><strong>MaxAuthTries 3</strong>              // 输入密码最大失败次数为 3</li>
+<li><strong>PasswordAuthentication no</strong>   // 禁用密码登录</li>
+<li><strong>PubkeyAuthentication yes</strong>    // 允许密钥认证</li>
 </ul>
-<p><strong>本教程就到此结束，如果实践的小伙伴遇到了什么问题可以评论里留言啊，不要忘记填写邮箱方便我回复你。</strong></p>
-
+<p>3、防火墙开放对应端口</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --zone=public --add-port=3389/tcp --permanent      # 开放 3389 端口</span></span><br><span class="line">success</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --reload    # 重新读取防火墙配置</span></span><br><span class="line">success</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --zone=public --query-port=3389/tcp    # 查看端口是否添加成功</span></span><br><span class="line">yes</span><br></pre></td></tr></table></figure>
+<p>4、在SELinux中添加对应的 SSH 端口</p>
+<p>如果没有 SELinux 的管理工具 semanage 需要先安装:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># yum provides semanage</span></span><br><span class="line">[root@localhost ~]<span class="comment"># yum install policycoreutils-python # semanage的依赖工具包</span></span><br></pre></td></tr></table></figure>
+<p>此时可以正常使用 semanage 命令了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># semanage port -l | grep ssh                 # 查询当前 ssh 服务端口</span></span><br><span class="line">ssh_port_t                     tcp      22</span><br><span class="line">[root@localhost ~]<span class="comment"># semanage port -a -t ssh_port_t -p tcp 3389  # 向 SELinux 中添加 ssh 端口</span></span><br><span class="line">[root@localhost ~]<span class="comment"># semanage port -l | grep ssh</span></span><br><span class="line">ssh_port_t                     tcp      3389, 22</span><br></pre></td></tr></table></figure>
+<p>5、重启SSH服务，登陆验证</p>
+<p>重启 sshd 服务后就可以使用新添加的端口登录了，可以看到成功登陆了，<strong>最后不要忘了把 22 端口注释掉哦</strong>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># systemctl restart sshd.service              # 重启 ssh 服务</span></span><br><span class="line"><span class="comment"># 此处使用另外一台 Linux 登录测试：</span></span><br><span class="line">[root@ostak01 ~]<span class="comment"># ssh root@192.168.60.143 -p 3389</span></span><br><span class="line">Last login: Wed Jun  3 00:36:14 2020 from 192.168.60.1</span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用密钥免密登录"><a href="#使用密钥免密登录" class="headerlink" title="使用密钥免密登录"></a>使用密钥免密登录</h2><h3 id="生成密钥对"><a href="#生成密钥对" class="headerlink" title="生成密钥对"></a>生成密钥对</h3><p>首先需要通过密码登录服务器，生成的密钥默认存放于当前账户的家目录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 ~]<span class="comment"># ssh-keygen   # 创建密钥</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa):    <span class="comment"># 直接回车，使用默认名称</span></span><br><span class="line">/root/.ssh/id_rsa already exists.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):     <span class="comment"># 直接回车，密码滞空</span></span><br><span class="line">Enter same passphrase again:                    <span class="comment"># 确认密码，直接回车</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.    <span class="comment"># 私钥</span></span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.pub.    <span class="comment"># 公钥</span></span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:8AbiBv9sGvbeGthI9gHHZ8D4of0NivCLnXoPnsp2ySk root@ostack02</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+---[RSA 2048]----+</span></span><br><span class="line"><span class="string">|     o.          |</span></span><br><span class="line"><span class="string">|    ..o.         |</span></span><br><span class="line"><span class="string">|  . o+=.o        |</span></span><br><span class="line"><span class="string">|  .+.+o*.        |</span></span><br><span class="line"><span class="string">|   o*..oSo       |</span></span><br><span class="line"><span class="string">|   +oB.o. .      |</span></span><br><span class="line"><span class="string">|   +*=B          |</span></span><br><span class="line"><span class="string">| .EoXB o         |</span></span><br><span class="line"><span class="string">| .+*+o=..        |</span></span><br><span class="line"><span class="string">+----[SHA256]-----+</span></span><br></pre></td></tr></table></figure>
+<p>然后就会在 ~/.ssh 目录下生成一对 2048 位无密码的 ras 密钥，ssh-keygen 的常用参数如下：</p>
+<ul>
+<li>-t：指定生成密钥的类型，默认使用SSH2d的rsa</li>
+<li>-f：指定生成密钥的文件名，默认id_rsa（私钥id_rsa，公钥id_rsa.pub）</li>
+<li>-b：指定密钥长度（bits），RSA最小要求768位，默认是2048位；DSA密钥必须是1024位（FIPS 1862标准规定）</li>
+<li>-C：添加一个注释</li>
+</ul>
+<p><strong>在此提醒，私钥 id_rsa 非常重要，需要妥善保存！</strong></p>
+<h3 id="公钥的安装"><a href="#公钥的安装" class="headerlink" title="公钥的安装"></a>公钥的安装</h3><h4 id="安装至当前服务器"><a href="#安装至当前服务器" class="headerlink" title="安装至当前服务器"></a>安装至当前服务器</h4><p>将公钥安装在当前服务器 ostack02 中，就可以使用私钥在本地免密登录 ostack02 了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 ~]<span class="comment"># cd ~/.ssh</span></span><br><span class="line">[root@ostack02 .ssh]<span class="comment"># cat id_rsa.pub &gt;&gt; authorized_keys</span></span><br><span class="line">[root@ostack02 .ssh]<span class="comment"># ll        # 注意文件权限, .ssh 目录为700</span></span><br><span class="line">total 16</span><br><span class="line">-rw-r--r--. 1 root root 2357 Jun  3 23:17 authorized_keys</span><br><span class="line">-rw-------. 1 root root 1675 Jun  3 23:09 id_rsa</span><br><span class="line">-rw-r--r--. 1 root root  395 Jun  3 23:09 id_rsa.pub</span><br><span class="line">-rw-r--r--. 1 root root  176 Jun  2 00:42 known_hosts</span><br></pre></td></tr></table></figure>
+<h4 id="安全至远程服务器"><a href="#安全至远程服务器" class="headerlink" title="安全至远程服务器"></a>安全至远程服务器</h4><p>如果想通过同一个私钥登录另一台服务器 ostack01 或想通过 ostack02 登录 ostack01 怎么办呢？可以将公钥也注册到需要登陆的服务器，这里以 ostack01(192.168.60.142) 为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 .ssh]<span class="comment"># ssh-copy-id -i /root/.ssh/id_rsa.pub root@192.168.60.142</span></span><br><span class="line">[root@ostack02 .ssh]<span class="comment"># cat id_rsa.pub </span></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPjXkFWHAphIzxduIQbLumViWfI2bs8gm2WPj7Y2vERNOfwHIjUqtKExrYKNDwO4etbxJ8opY1wKWdbFLAd7uwLOJc0uP37hdY3WOsj+W7X0i+MTIRmek0oM5xzAbXVWjLsuzK0Djzv0TE8I8L2nOOcehz7DxgXdW7+GRmF6w+T6M18aTmltKh7SHEEbBToq5SNlP2VDo3fmVWh3/v58Q5KPZDHNnpdQ4L9RuiGcwcR3jbIbrKymqJfTPlfOiuiYDBb6wfsQ9+rB20bEKXMSNAGs5yF5KB69lIHSadnN3Ef8YjTTAO/mKZrkx42xZaYuVuSIwJ0DXUHz1MnqvfJ8Pz root@ostack02</span><br><span class="line"><span class="comment"># 此时登录 ostack01，会在 /root/.ssh/ 下生成 authorized_keys 文件，通过查看比对发现和公钥是一致的</span></span><br><span class="line">[root@ostak01 .ssh]<span class="comment"># cat authorized_keys </span></span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDPjXkFWHAphIzxduIQbLumViWfI2bs8gm2WPj7Y2vERNOfwHIjUqtKExrYKNDwO4etbxJ8opY1wKWdbFLAd7uwLOJc0uP37hdY3WOsj+W7X0i+MTIRmek0oM5xzAbXVWjLsuzK0Djzv0TE8I8L2nOOcehz7DxgXdW7+GRmF6w+T6M18aTmltKh7SHEEbBToq5SNlP2VDo3fmVWh3/v58Q5KPZDHNnpdQ4L9RuiGcwcR3jbIbrKymqJfTPlfOiuiYDBb6wfsQ9+rB20bEKXMSNAGs5yF5KB69lIHSadnN3Ef8YjTTAO/mKZrkx42xZaYuVuSIwJ0DXUHz1MnqvfJ8Pz root@ostack02</span><br></pre></td></tr></table></figure>
+<h3 id="私钥的使用"><a href="#私钥的使用" class="headerlink" title="私钥的使用"></a>私钥的使用</h3><h4 id="SSH-软件使用私钥登录服务器"><a href="#SSH-软件使用私钥登录服务器" class="headerlink" title="SSH 软件使用私钥登录服务器"></a>SSH 软件使用私钥登录服务器</h4><p>将私钥提取至本地，用于后续登录，这里以Xsheel为例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 .ssh]<span class="comment"># sz /root/.ssh/id_rsa</span></span><br><span class="line">[root@ostack02 .ssh]<span class="comment"># yum install lrzsz         # 如果没有 sz 命令，可通过 yum 安装</span></span><br><span class="line">使用说明：</span><br><span class="line">1. sz命令发送文件到本地：</span><br><span class="line"><span class="comment"># sz filename</span></span><br><span class="line">2. rz命令本地上传文件到服务器：</span><br><span class="line"><span class="comment"># rz</span></span><br><span class="line">执行该命令后，在弹出框中选择要上传的文件即可。</span><br></pre></td></tr></table></figure>
+<p>在本地打开 Xsheel 连接服务器，弹出的对话框中选择 Public Key，<kbd>浏览</kbd>选中下载的私钥。因为我们没有设置密码，所以直接<kbd>确定</kbd>，就可以成功登录该服务器了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[C:\~]$ ssh root@192.168.60.142</span><br></pre></td></tr></table></figure>
+<p><img src="http://img.yaohui.world/images/2020/06/04/ssh_key_01.png" alt="ssh_key_01.png"></p>
+<h4 id="Linux-使用私钥登录服务器"><a href="#Linux-使用私钥登录服务器" class="headerlink" title="Linux 使用私钥登录服务器"></a>Linux 使用私钥登录服务器</h4><p>使用 ostack02 登录 ostack01：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 .ssh]<span class="comment"># ssh root@192.168.60.142   </span></span><br><span class="line">Last login: Thu Jun  4 00:46:45 2020 from 192.168.60.1</span><br><span class="line">[root@ostak01 ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p>ssh基于密钥进行认证时，默认会使用~/.ssh/*id_rsa进行认证，当使用非默认名称的私钥进行认证时，需要使用 <strong>-i</strong> 参数手动指明对应的私钥：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需按照上述步骤添加一个新的密钥 id_rsa_demo</span></span><br><span class="line">[root@ostack02 .ssh]<span class="comment"># ssh -i ~/.ssh/id_rsa_demo root@192.168.60.142</span></span><br></pre></td></tr></table></figure>
+<h3 id="关闭-SELinux"><a href="#关闭-SELinux" class="headerlink" title="关闭 SELinux"></a>关闭 SELinux</h3><p>虚拟机建议关闭，如果想详细了解什么是SELinux，请转<a href="https://baike.baidu.com/item/SELinux/8865268?fr=aladdin" target="_blank" rel="noopener">百度百科:SELinux</a> ，这里只介绍关闭的方法：</p>
+<p>临时关闭，重启后失效：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 .ssh]<span class="comment"># setenforce 0</span></span><br></pre></td></tr></table></figure>
+<p>彻底关闭，告别离奇问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack02 .ssh]<span class="comment"># vim /etc/selinux/config </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This file controls the state of SELinux on the system.</span></span><br><span class="line"><span class="comment"># SELINUX= can take one of these three values:</span></span><br><span class="line"><span class="comment">#     enforcing - SELinux security policy is enforced.</span></span><br><span class="line"><span class="comment">#     permissive - SELinux prints warnings instead of enforcing.</span></span><br><span class="line"><span class="comment">#     disabled - No SELinux policy is loaded.</span></span><br><span class="line"><span class="comment"># SELINUX=enforcing     # 保留原来的配置</span></span><br><span class="line">SELINUX=<span class="built_in">disable</span>         <span class="comment"># 新复制一行，设置为 disable</span></span><br><span class="line"><span class="comment"># SELINUXTYPE= can take one of three values:</span></span><br><span class="line"><span class="comment">#     targeted - Targeted processes are protected,</span></span><br><span class="line"><span class="comment">#     minimum - Modification of targeted policy. Only selected processes are protected. </span></span><br><span class="line"><span class="comment">#     mls - Multi Level Security protection.</span></span><br><span class="line">SELINUXTYPE=targeted</span><br></pre></td></tr></table></figure>
+<h3 id="修改-SSH-配置文件"><a href="#修改-SSH-配置文件" class="headerlink" title="修改 SSH 配置文件"></a>修改 SSH 配置文件</h3><p>在安装了公钥的服务器上编辑 /etc/ssh/sshd_config 文件，允许密钥登陆、禁用密码登录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[root@ostak01 ~]<span class="comment"># vim /etc/ssh/sshd_config</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># If you want to change the port on a SELinux system, you have to tell</span></span><br><span class="line"><span class="comment"># SELinux about this change.</span></span><br><span class="line"><span class="comment"># semanage port -a -t ssh_port_t -p tcp #PORTNUMBER</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#Port 22</span></span><br><span class="line"><span class="comment">#AddressFamily any</span></span><br><span class="line"><span class="comment">#ListenAddress 0.0.0.0</span></span><br><span class="line"><span class="comment">#ListenAddress ::</span></span><br><span class="line"></span><br><span class="line">RSAAuthentication yes       <span class="comment"># 允许 rsa 密钥认证</span></span><br><span class="line">PubkeyAuthentication yes    <span class="comment"># 允许密钥认证</span></span><br><span class="line">PermitRootLogin yes         <span class="comment"># 此处请留意 root 用户能否通过 SSH 登录，默认为yes：</span></span><br><span class="line">PasswordAuthentication no   <span class="comment"># 上面已经验证密钥可以成功登录，可以禁用密码登录。</span></span><br><span class="line"></span><br><span class="line">HostKey /etc/ssh/ssh_host_rsa_key</span><br><span class="line">[root@ostak01 ~]<span class="comment"># systemctl restart sshd.service    # 重启 ssh 服务</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -501,9 +540,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"><i class="fa fa-tag"></i> 随笔</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
           
-            <a href="/tags/Github/" rel="tag"><i class="fa fa-tag"></i> Github</a>
+            <a href="/tags/网络安全/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
           
         </div>
       
@@ -516,8 +555,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/Activation-kit/" rel="next" title="Windows激活">
-                <i class="fa fa-chevron-left"></i> Windows激活
+              <a href="/2020/05/04/Mi-Flash/" rel="next" title="小米6刷机">
+                <i class="fa fa-chevron-left"></i> 小米6刷机
               </a>
             
           </div>
@@ -525,10 +564,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/26/Computer-repair/" rel="prev" title="那些关于电脑的故事">
-                那些关于电脑的故事 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -715,7 +750,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于域名"><span class="nav-number">1.</span> <span class="nav-text">关于域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What？什么是域名"><span class="nav-number">1.1.</span> <span class="nav-text">What？什么是域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Where-在那里注册域名"><span class="nav-number">1.2.</span> <span class="nav-text">Where?在那里注册域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How？如何使用购买的域名"><span class="nav-number">1.3.</span> <span class="nav-text">How？如何使用购买的域名</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux服务器登录方法"><span class="nav-number">1.</span> <span class="nav-text">Linux服务器登录方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加固-SSH-账户密码登录"><span class="nav-number">2.</span> <span class="nav-text">加固 SSH 账户密码登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改默认端口"><span class="nav-number">2.1.</span> <span class="nav-text">修改默认端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用密钥免密登录"><span class="nav-number">3.</span> <span class="nav-text">使用密钥免密登录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成密钥对"><span class="nav-number">3.1.</span> <span class="nav-text">生成密钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#公钥的安装"><span class="nav-number">3.2.</span> <span class="nav-text">公钥的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装至当前服务器"><span class="nav-number">3.2.1.</span> <span class="nav-text">安装至当前服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全至远程服务器"><span class="nav-number">3.2.2.</span> <span class="nav-text">安全至远程服务器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#私钥的使用"><span class="nav-number">3.3.</span> <span class="nav-text">私钥的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#SSH-软件使用私钥登录服务器"><span class="nav-number">3.3.1.</span> <span class="nav-text">SSH 软件使用私钥登录服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux-使用私钥登录服务器"><span class="nav-number">3.3.2.</span> <span class="nav-text">Linux 使用私钥登录服务器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭-SELinux"><span class="nav-number">3.4.</span> <span class="nav-text">关闭 SELinux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-SSH-配置文件"><span class="nav-number">3.5.</span> <span class="nav-text">修改 SSH 配置文件</span></a></li></ol></li></ol></div>
             
 
           </div>
