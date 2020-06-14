@@ -90,25 +90,25 @@
 
 
 
-<meta name="description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。 通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，因">
+<meta name="description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。  通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，">
 <meta name="keywords" content="磁盘,raid">
 <meta property="og:type" content="article">
 <meta property="og:title" content="服务器那些事儿—RAID">
 <meta property="og:url" content="https://poison77.github.io/2019/08/13/Raid/index.html">
 <meta property="og:site_name" content="灰灰の小站">
-<meta property="og:description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。 通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，因">
+<meta property="og:description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。  通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081301.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081302.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081303.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081304.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081305.png">
-<meta property="og:image" content="https://poison77.github.io/uploads/Raid081306.png">
-<meta property="og:updated_time" content="2020-03-27T03:17:23.733Z">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081301.png">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081302.png">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081303.png">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081304.png">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081305.png">
+<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/Raid081306.png">
+<meta property="og:updated_time" content="2020-06-14T17:38:06.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器那些事儿—RAID">
-<meta name="twitter:description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。 通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，因">
-<meta name="twitter:image" content="https://poison77.github.io/uploads/Raid081301.png">
+<meta name="twitter:description" content="关于RAID磁盘阵列（Redundant Arrays of Independent Drives，RAID），可简单理解为 “独立磁盘构成的具有数据备份功能的磁盘阵列”。  通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。 RAID将多个硬盘组合为一个成为一个逻辑磁盘，">
+<meta name="twitter:image" content="http://img.yaohui.world/images/2020/06/15/Raid081301.png">
 
 
 
@@ -470,7 +470,8 @@
       
 
       
-        <h2 id="关于RAID"><a href="#关于RAID" class="headerlink" title="关于RAID"></a>关于<strong>RAID</strong></h2><p>磁盘阵列（<strong>R</strong>edundant <strong>A</strong>rrays of <strong>I</strong>ndependent <strong>D</strong>rives，RAID），可简单理解为 <strong>“独立磁盘构成的具有数据备份功能的磁盘阵列”</strong>。<br><img src="/uploads/Raid081301.png" alt="RAID"></p>
+        <h2 id="关于RAID"><a href="#关于RAID" class="headerlink" title="关于RAID"></a>关于<strong>RAID</strong></h2><p>磁盘阵列（<strong>R</strong>edundant <strong>A</strong>rrays of <strong>I</strong>ndependent <strong>D</strong>rives，RAID），可简单理解为 <strong>“独立磁盘构成的具有数据备份功能的磁盘阵列”</strong>。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081301.png" alt="Raid081301.png"></p>
 <p>通常服务器的存储都是使用多块独立的磁盘组合成一个巨大的硬盘组，利用虚拟化存储技术把多个硬盘组合起来，成为一个或多个硬盘阵列组，这样做的目的是提升性能或数据冗余或是两者同时提升。</p>
 <p>RAID将多个硬盘组合为一个成为一个逻辑磁盘，因此操作系统会把这个逻辑磁盘当作一个硬盘对待。这里需要注意的是，一般RAID使用<strong>完全相同的磁盘</strong>作为组合。</p>
 <h2 id="RAID的实现"><a href="#RAID的实现" class="headerlink" title="RAID的实现"></a>RAID的实现</h2><p>磁盘阵列其样式有三种，一是外接式磁盘阵列柜、二是内接式磁盘阵列卡，三是利用软件来仿真。</p>
@@ -478,13 +479,18 @@
 <p>②<strong>内接式磁盘阵列卡</strong>：价格便宜，但需要较高的安装技术，适合技术人员使用操作。硬件阵列能够提供在线扩容、动态修改阵列级别、自动数据恢复、驱动器漫游、超高速缓冲等功能。它能提供性能、数据保护、可靠性、可用性和可管理性的解决方案。通过阵列卡专用的处理单元来进行操作，是目前最常用的一种方式，多集成在服务器中。</p>
 <p>③利用软件仿真的方式，是指通过网络操作系统自身提供的磁盘管理功能将连接的普通SCSI卡上的多块硬盘配置成逻辑盘，组成阵列。软件阵列可以提供数据冗余功能，但是磁盘子系统的性能会有所降低，有的降低幅度还比较大，达30%左右。因此会拖累机器的速度，不适合大数据流量的服务器。</p>
 <h2 id="RAID的层级"><a href="#RAID的层级" class="headerlink" title="RAID的层级"></a>RAID的层级</h2><p>在磁盘运行过程中，取决于 RAID 层级不同，数据会以多种模式分散于各个硬盘，RAID 层级的命名会以 RAID 开头并带数字；比较常用的有：.RAID 0，RAID 1，RAID 5，RAID 10等，这些只是标准RAID划分，还有比较负责的混合RAID这里就不一一介绍了。</p>
-<h3 id="RAID-0-——-性能"><a href="#RAID-0-——-性能" class="headerlink" title="RAID 0 —— 性能"></a>RAID 0 —— 性能</h3><p>RAID 0亦称为带区集。它将两个以上的磁盘并联起来，成为一个大容量的磁盘。在存放数据时，分段后分散存储在这些磁盘中，因为读写时都可以并行处理，所以在所有的级别中，<strong>RAID 0的速度是最快的</strong>。但是RAID 0既<strong>没有冗余功能</strong>，也<strong>不具备容错能力</strong>，如果一个磁盘（物理）损坏，所有数据都会丢失。<br><img src="/uploads/Raid081302.png" alt="RAID"></p>
+<h3 id="RAID-0-——-性能"><a href="#RAID-0-——-性能" class="headerlink" title="RAID 0 —— 性能"></a>RAID 0 —— 性能</h3><p>RAID 0亦称为带区集。它将两个以上的磁盘并联起来，成为一个大容量的磁盘。在存放数据时，分段后分散存储在这些磁盘中，因为读写时都可以并行处理，所以在所有的级别中，<strong>RAID 0的速度是最快的</strong>。但是RAID 0既<strong>没有冗余功能</strong>，也<strong>不具备容错能力</strong>，如果一个磁盘（物理）损坏，所有数据都会丢失。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081302.png" alt="Raid081302.png"></p>
 <h3 id="RAID-1-——-数据保护"><a href="#RAID-1-——-数据保护" class="headerlink" title="RAID 1 —— 数据保护"></a>RAID 1 —— 数据保护</h3><p>两组以上的N个磁盘相互作镜像（也称为镜像模式或RAID 1），只要一个磁盘正常即可维持运作，可靠性最高。其原理为将所有磁盘容量分成两半，在主硬盘上存放数据的同时也在镜像硬盘上复制备份数据，当主硬盘（物理）损坏时，镜像硬盘则代替主硬盘的工作。</p>
-<p>注：如果用两个不同大小的磁盘建RAID 1，可用空间以<strong>较小的磁盘</strong>为标准。<br><img src="/uploads/Raid081303.png" alt="RAID"></p>
+<p>注：如果用两个不同大小的磁盘建RAID 1，可用空间以<strong>较小的磁盘</strong>为标准。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081303.png" alt="Raid081303.png"></p>
 <h3 id="RAID-5-——-数据保护和速度"><a href="#RAID-5-——-数据保护和速度" class="headerlink" title="RAID 5 —— 数据保护和速度"></a>RAID 5 —— 数据保护和速度</h3><p>至少需要三个硬盘，使用了Disk Striping（硬盘分割）技术。RAID 5<strong>不是对存储的数据进行备份</strong>，而是把数据和相对应的奇偶校验信息存储到组成RAID5的各个磁盘上，并且<strong>奇偶校验信息</strong>和相对应的数据<strong>分别存储于不同的磁盘上</strong>。当RAID5的一个磁盘数据发生损坏后，可以利用剩下的数据和相应的奇偶校验信息去恢复被损坏的数据。</p>
-<p>同时RAID 5可以为系统提供<strong>数据安全保障</strong>，但保障程度要比RAID 1低而磁盘空间利用率要比RAID 1高，可以节约存储成本；是一个介于RAID 0 和RAID 1 之间的折中方案。<br><img src="/uploads/Raid081304.png" alt="RAID"></p>
-<h3 id="RAID-10-01-——-高可靠性和高性能"><a href="#RAID-10-01-——-高可靠性和高性能" class="headerlink" title="RAID 10/01 —— 高可靠性和高性能"></a>RAID 10/01 —— 高可靠性和高性能</h3><p>RAID 10是先分割数据再镜像，再将所有硬盘分为两组，视为以RAID 1作为最低组合，然后将每组RAID 1视为一个“硬盘”组合为RAID 0运作。<br><img src="/uploads/Raid081305.png" alt="RAID"></p>
-<p>RAID 01则是跟RAID 10的程序相反，是先镜像再将数据到分割两组硬盘。它将所有的硬盘分为两组，每组各自构成为RAID 0作为最低组合，而将两组硬盘组合为RAID 1运作。<br><img src="/uploads/Raid081306.png" alt="RAID"></p>
+<p>同时RAID 5可以为系统提供<strong>数据安全保障</strong>，但保障程度要比RAID 1低而磁盘空间利用率要比RAID 1高，可以节约存储成本；是一个介于RAID 0 和RAID 1 之间的折中方案。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081304.png" alt="Raid081304.png"></p>
+<h3 id="RAID-10-01-——-高可靠性和高性能"><a href="#RAID-10-01-——-高可靠性和高性能" class="headerlink" title="RAID 10/01 —— 高可靠性和高性能"></a>RAID 10/01 —— 高可靠性和高性能</h3><p>RAID 10是先分割数据再镜像，再将所有硬盘分为两组，视为以RAID 1作为最低组合，然后将每组RAID 1视为一个“硬盘”组合为RAID 0运作。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081305.png" alt="Raid081305.png"></p>
+<p>RAID 01则是跟RAID 10的程序相反，是先镜像再将数据到分割两组硬盘。它将所有的硬盘分为两组，每组各自构成为RAID 0作为最低组合，而将两组硬盘组合为RAID 1运作。</p>
+<p><img src="http://img.yaohui.world/images/2020/06/15/Raid081306.png" alt="Raid081306.png"></p>
 <ul>
 <li>当RAID 10有一个硬盘受损，其余硬盘会继续运作。</li>
 <li>RAID 01只要有一个硬盘受损，同组RAID 0的所有硬盘都会停止运作，只剩下其他组的硬盘运作，可靠性较低。</li>
@@ -616,7 +622,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="灰灰の小站">
 <meta property="og:description" content="关于Windows激活方式可能有很多人新装了WinServer 2008、或重装了Win10系统后要进行系统激活，不然的话系统右下角会出现几行数字水印，非常的烦人，今天就给大家介绍几种常见的激活方法。 查看自己系统是否永久激活：打开CMD，输入slmgr.vbs -xprslmgr.vbs -dlv ：显示最为详尽的激活信息，包括：激活ID、安装ID、激活截止日期 KMS激活最常用的KMS激活方式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-24T16:58:30.813Z">
+<meta property="og:updated_time" content="2020-06-07T17:43:27.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows激活">
 <meta name="twitter:description" content="关于Windows激活方式可能有很多人新装了WinServer 2008、或重装了Win10系统后要进行系统激活，不然的话系统右下角会出现几行数字水印，非常的烦人，今天就给大家介绍几种常见的激活方法。 查看自己系统是否永久激活：打开CMD，输入slmgr.vbs -xprslmgr.vbs -dlv ：显示最为详尽的激活信息，包括：激活ID、安装ID、激活截止日期 KMS激活最常用的KMS激活方式">
@@ -426,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  861
+                  849
                 </span>
               
 
@@ -470,34 +470,17 @@
 <p>想深入了解可以跳转：<a href="https://docs.microsoft.com/en-us/windows/deployment/volume-activation/activate-using-key-management-service-vamt" target="_blank" rel="noopener">微软官方关于使用密钥管理服务激活的说明</a></p>
 <h3 id="使用密钥激活"><a href="#使用密钥激活" class="headerlink" title="使用密钥激活"></a>使用密钥激活</h3><p>这个是最为安全和简便的方式，而且一旦激活成功就是永久的，但是Win10的密钥特别难找，往往搜了一大堆也没有几个可以用的，这里我建议支持正版的用户可以去某宝购买。</p>
 <p>这里我分享几个Windows Server的激活码给大家，使用方法是使用管理员权限打开CMD，依次执行下面的命令，KMS激活一般180天，到期后再次激活。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk WMDGN-G9PQG-XVVXX-R3X43-63DFG //安装 windows 密钥</span><br><span class="line">slmgr /skms zh.us.to    //设置kms服务器</span><br><span class="line">slmgr /ato  //激活 windows 系统</span><br><span class="line">slmgr /xpr  //查询激活状态</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">slmgr /ipk WMDGN-G9PQG-XVVXX-R3X43-63DFG //安装 windows 密钥</span><br><span class="line">slmgr /skms zh.us.to    //设置kms服务器</span><br><span class="line">slmgr /ato  //激活 windows 系统</span><br><span class="line">slmgr /xpr  //查询激活状态</span><br></pre></td></tr></table></figure>
 <h4 id="windows-server-2019零售版永久激活码："><a href="#windows-server-2019零售版永久激活码：" class="headerlink" title="windows server 2019零售版永久激活码："></a>windows server 2019零售版永久激活码：</h4><ul>
 <li>Windows Server 2019 Datacenter Retail：[Key]：C4VN-4GQBW-WYPTV-3BD66-FVXR6</li>
 <li>Windows Server 2019 Standard Retail：[Key]：N3P28-TW9C9-69PWP-YQVC3-YBKR4</li>
 <li>Windows Server 2019 Essential Retail：[Key]：NMB98-MKJBC-FTVQ9-J3XK6-QYKTQ</li>
 </ul>
-<h4 id="Windows-Server-通用密码"><a href="#Windows-Server-通用密码" class="headerlink" title="Windows Server 通用密码"></a>Windows Server 通用密码</h4><pre><code class="bash">TJMM6-8MPRG-3JVTK-Q8TM4-73TYX
-</code></pre>
-<h4 id="Windows-Server-2008-Enterprise-企业版万能密码"><a href="#Windows-Server-2008-Enterprise-企业版万能密码" class="headerlink" title="Windows Server 2008 Enterprise 企业版万能密码"></a>Windows Server 2008 Enterprise 企业版万能密码</h4><pre><code class="bash">P36VD-22V68-JVM2W-DBC77-MK98W
-FJCXR-2D9YR-YD2DR-92DMX-HJF9D
-H77K6-V9P48-H4BJ7-KR9WR-D8YR8
-YTKP9-MWBPB-RJ6MY-CXTDG-FKTYH
-</code></pre>
-<h4 id="Windows-Server-2008-Standard-简体中文正式零售标准版"><a href="#Windows-Server-2008-Standard-简体中文正式零售标准版" class="headerlink" title="Windows Server 2008 Standard 简体中文正式零售标准版"></a>Windows Server 2008 Standard 简体中文正式零售标准版</h4><pre><code class="bash">8YTF9-YGWD8-B87YF-46DMM-3Q667
-4H8B2-HMF2F-73R7D-BWHC3-C8CQ9
-VWRJT-DJJYR-QG7YD-Q7X73-TQCHT
-87PC6-CTW7M-C3DVH-TYGGR-BRJPM
-</code></pre>
-<h4 id="windows-server-2008-Enterprise-简体中文正式企业版"><a href="#windows-server-2008-Enterprise-简体中文正式企业版" class="headerlink" title="windows server 2008 Enterprise 简体中文正式企业版"></a>windows server 2008 Enterprise 简体中文正式企业版</h4><pre><code class="bash">YV6BQ-YR3DC-7JM83-R44J8-V7XVM
-2PCB6-H32MQ-DQFD4-JR63C-CB962
-FBT94-726VQ-GBK3Q-7HCKX-488YJ
-TBT4R-72VTH-VG89P-KXGFC-CHFR4
-</code></pre>
-<h4 id="Windows-Web-Server-2008-简体中文正式网站服务器版"><a href="#Windows-Web-Server-2008-简体中文正式网站服务器版" class="headerlink" title="Windows Web Server 2008 简体中文正式网站服务器版"></a>Windows Web Server 2008 简体中文正式网站服务器版</h4><pre><code class="bash">CXGWX-RXCVX-CM4TH-9PM2X-FQ6BX
-39KGK-BRYMK-DDXMX-77XC7-VM9Q9
-PMPR7-4D4TX-K8GKM-B43JV-WH2XV
-MFTPC-GGRR4-RYYXP-BPXJD-FKMGF
-</code></pre>
+<h4 id="Windows-Server-通用密码"><a href="#Windows-Server-通用密码" class="headerlink" title="Windows Server 通用密码"></a>Windows Server 通用密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TJMM6-8MPRG-3JVTK-Q8TM4-73TYX</span><br></pre></td></tr></table></figure>
+<h4 id="Windows-Server-2008-Enterprise-企业版万能密码"><a href="#Windows-Server-2008-Enterprise-企业版万能密码" class="headerlink" title="Windows Server 2008 Enterprise 企业版万能密码"></a>Windows Server 2008 Enterprise 企业版万能密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">P36VD-22V68-JVM2W-DBC77-MK98W</span><br><span class="line">FJCXR-2D9YR-YD2DR-92DMX-HJF9D</span><br><span class="line">H77K6-V9P48-H4BJ7-KR9WR-D8YR8</span><br><span class="line">YTKP9-MWBPB-RJ6MY-CXTDG-FKTYH</span><br></pre></td></tr></table></figure>
+<h4 id="Windows-Server-2008-Standard-简体中文正式零售标准版"><a href="#Windows-Server-2008-Standard-简体中文正式零售标准版" class="headerlink" title="Windows Server 2008 Standard 简体中文正式零售标准版"></a>Windows Server 2008 Standard 简体中文正式零售标准版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">8YTF9-YGWD8-B87YF-46DMM-3Q667</span><br><span class="line">4H8B2-HMF2F-73R7D-BWHC3-C8CQ9</span><br><span class="line">VWRJT-DJJYR-QG7YD-Q7X73-TQCHT</span><br><span class="line">87PC6-CTW7M-C3DVH-TYGGR-BRJPM</span><br></pre></td></tr></table></figure>
+<h4 id="windows-server-2008-Enterprise-简体中文正式企业版"><a href="#windows-server-2008-Enterprise-简体中文正式企业版" class="headerlink" title="windows server 2008 Enterprise 简体中文正式企业版"></a>windows server 2008 Enterprise 简体中文正式企业版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">YV6BQ-YR3DC-7JM83-R44J8-V7XVM</span><br><span class="line">2PCB6-H32MQ-DQFD4-JR63C-CB962</span><br><span class="line">FBT94-726VQ-GBK3Q-7HCKX-488YJ</span><br><span class="line">TBT4R-72VTH-VG89P-KXGFC-CHFR4</span><br></pre></td></tr></table></figure>
+<h4 id="Windows-Web-Server-2008-简体中文正式网站服务器版"><a href="#Windows-Web-Server-2008-简体中文正式网站服务器版" class="headerlink" title="Windows Web Server 2008 简体中文正式网站服务器版"></a>Windows Web Server 2008 简体中文正式网站服务器版</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CXGWX-RXCVX-CM4TH-9PM2X-FQ6BX</span><br><span class="line">39KGK-BRYMK-DDXMX-77XC7-VM9Q9</span><br><span class="line">PMPR7-4D4TX-K8GKM-B43JV-WH2XV</span><br><span class="line">MFTPC-GGRR4-RYYXP-BPXJD-FKMGF</span><br></pre></td></tr></table></figure>
 <h3 id="激活工具激活"><a href="#激活工具激活" class="headerlink" title="激活工具激活"></a>激活工具激活</h3><p>这里放几个链接吧，供大家下载使用：<br><a href="https://pan.baidu.com/s/12Xhzy90CZTa5qiqgbEIwqg" target="_blank" rel="noopener">Win10数字权利激活</a> → 提取码:9hjr<br><a href="https://pan.baidu.com/s/152qUkilo-yr_UDNXi6GKbg" target="_blank" rel="noopener">Win7及以下版本激活</a> → 提取码:4011<br><a href="https://pan.baidu.com/s/1TV-SXstrWG-ZG_e1O6cXcg" target="_blank" rel="noopener">Office激活（支持2019）</a> → 提取码:mvbl</p>
 
       
@@ -625,7 +608,7 @@ MFTPC-GGRR4-RYYXP-BPXJD-FKMGF
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

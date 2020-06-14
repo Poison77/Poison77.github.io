@@ -79,7 +79,7 @@
 
 
 
-  <meta name="keywords" content="Windows,">
+  <meta name="keywords" content="Linux,网络安全,">
 
 
 
@@ -90,27 +90,18 @@
 
 
 
-<meta name="description" content="每个会修电脑的BOY都有故事1.能力越大，责任也就越大作为一个懂电脑的BOY，平常被姑娘问的最多一句话就是： “我电脑出问题了，快帮我看一看。”   而作为标准回答，往往也只有一句： 你重启一下试试。 后来的事实证明这样做其实不好。 因为这句话效率过高。 导致姑娘们再没有什么事会联系你。 怎么办，难道只能选择原谅重启键？ 于是当第一次有个姑娘告诉你： “我试过了，重启键没用”的时候。 你才终于体会">
-<meta name="keywords" content="Windows">
+<meta name="description" content="前言在我学习 ansible 的时候，其官方文档中提到使用 ssh-agent 来管理密钥，用于免密登录远程节点；经过我的努力研究，终于参透其理，下述通过 5W1H 方法对它的使用进行简单的总结： What—什么是 ssh-agent ?SSH-Agent 是一个代理程序，用于帮助我们管理私钥，可以存储用户的身份密钥(identity keys)和密钥密码(passphrases) Where—哪">
+<meta name="keywords" content="Linux,网络安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="那些关于电脑的故事">
-<meta property="og:url" content="https://poison77.github.io/2019/07/26/Computer-repair/index.html">
+<meta property="og:title" content="SSH-Agent 代理">
+<meta property="og:url" content="https://poison77.github.io/2020/06/07/ssh-agent/index.html">
 <meta property="og:site_name" content="灰灰の小站">
-<meta property="og:description" content="每个会修电脑的BOY都有故事1.能力越大，责任也就越大作为一个懂电脑的BOY，平常被姑娘问的最多一句话就是： “我电脑出问题了，快帮我看一看。”   而作为标准回答，往往也只有一句： 你重启一下试试。 后来的事实证明这样做其实不好。 因为这句话效率过高。 导致姑娘们再没有什么事会联系你。 怎么办，难道只能选择原谅重启键？ 于是当第一次有个姑娘告诉你： “我试过了，重启键没用”的时候。 你才终于体会">
+<meta property="og:description" content="前言在我学习 ansible 的时候，其官方文档中提到使用 ssh-agent 来管理密钥，用于免密登录远程节点；经过我的努力研究，终于参透其理，下述通过 5W1H 方法对它的使用进行简单的总结： What—什么是 ssh-agent ?SSH-Agent 是一个代理程序，用于帮助我们管理私钥，可以存储用户的身份密钥(identity keys)和密钥密码(passphrases) Where—哪">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072701.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072702.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072703.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072704.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072705.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072706.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072707.png">
-<meta property="og:image" content="http://img.yaohui.world/images/2020/06/15/windows072708.jpg">
-<meta property="og:updated_time" content="2020-06-14T17:34:06.482Z">
+<meta property="og:updated_time" content="2020-06-14T17:53:44.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="那些关于电脑的故事">
-<meta name="twitter:description" content="每个会修电脑的BOY都有故事1.能力越大，责任也就越大作为一个懂电脑的BOY，平常被姑娘问的最多一句话就是： “我电脑出问题了，快帮我看一看。”   而作为标准回答，往往也只有一句： 你重启一下试试。 后来的事实证明这样做其实不好。 因为这句话效率过高。 导致姑娘们再没有什么事会联系你。 怎么办，难道只能选择原谅重启键？ 于是当第一次有个姑娘告诉你： “我试过了，重启键没用”的时候。 你才终于体会">
-<meta name="twitter:image" content="http://img.yaohui.world/images/2020/06/15/windows072701.png">
+<meta name="twitter:title" content="SSH-Agent 代理">
+<meta name="twitter:description" content="前言在我学习 ansible 的时候，其官方文档中提到使用 ssh-agent 来管理密钥，用于免密登录远程节点；经过我的努力研究，终于参透其理，下述通过 5W1H 方法对它的使用进行简单的总结： What—什么是 ssh-agent ?SSH-Agent 是一个代理程序，用于帮助我们管理私钥，可以存储用户的身份密钥(identity keys)和密钥密码(passphrases) Where—哪">
 
 
 
@@ -140,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="https://poison77.github.io/2019/07/26/Computer-repair/">
+  <link rel="canonical" href="https://poison77.github.io/2020/06/07/ssh-agent/">
 
 
 
@@ -156,7 +147,7 @@
 
 
 
-  <title>那些关于电脑的故事 | 灰灰の小站</title>
+  <title>SSH-Agent 代理 | 灰灰の小站</title>
   
 
 
@@ -337,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://poison77.github.io/2019/07/26/Computer-repair/">
+    <link itemprop="mainEntityOfPage" href="https://poison77.github.io/2020/06/07/ssh-agent/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Poison">
@@ -354,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">那些关于电脑的故事</h1>
+          <h1 class="post-title" itemprop="name headline">SSH-Agent 代理</h1>
         
 
         <div class="post-meta">
@@ -366,8 +357,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T00:35:25+08:00">
-                2019-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-07T20:16:02+08:00">
+                2020-06-07
               </time>
             
 
@@ -389,8 +380,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -407,8 +398,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/26/Computer-repair/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/Computer-repair/" itemprop="commentCount"></span>
+                <a href="/2020/06/07/ssh-agent/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/07/ssh-agent/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -435,7 +426,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  1.6k
                 </span>
               
 
@@ -472,170 +463,77 @@
       
 
       
-        <h2 id="每个会修电脑的BOY都有故事"><a href="#每个会修电脑的BOY都有故事" class="headerlink" title="每个会修电脑的BOY都有故事"></a>每个会修电脑的BOY都有故事</h2><h3 id="1-能力越大，责任也就越大"><a href="#1-能力越大，责任也就越大" class="headerlink" title="1.能力越大，责任也就越大"></a>1.能力越大，责任也就越大</h3><p>作为一个懂电脑的BOY，平常被姑娘问的最多一句话就是：</p>
-<p>“我电脑出问题了，快帮我看一看。”</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072701.png" alt="windows072701.png"> </p>
-<p>而作为标准回答，往往也只有一句：</p>
-<p>你<strong>重启</strong>一下试试。</p>
-<p>后来的事实证明这样做其实不好。</p>
-<p>因为这句话效率过高。</p>
-<p>导致姑娘们再没有什么事会联系你。</p>
-<p>怎么办，难道只能选择原谅重启键？</p>
-<p>于是当第一次有个姑娘告诉你：</p>
-<p>“我试过了，重启键没用”的时候。</p>
-<p>你才终于体会到，什么叫做能力越大，责任也就越大。</p>
-<h3 id="2-没有什么是重启不能解决的，如果有，那就重装系统"><a href="#2-没有什么是重启不能解决的，如果有，那就重装系统" class="headerlink" title="2.没有什么是重启不能解决的，如果有，那就重装系统"></a>2.没有什么是重启不能解决的，如果有，那就重装系统</h3><p>你知道，如果重启都不能解决问题的话。</p>
-<p>那么这件事情的严重性已经到达了常人无法解决的高度。<br>普通人之所以成为普通人。</p>
-<p>不是因为他们笨。</p>
-<p>而是因为懒。</p>
-<p>不是因为懒得去学。</p>
-<p>而是因为懒得听你讲。</p>
-<p>成熟的你开始懂得原谅。</p>
-<p>懂得并不是只有青青原上草才会一岁一枯荣。</p>
-<p>每年都应该做的事情之一，还有重装系统。</p>
-<p>于是你本着慈悲心肠，从箱底拿出了一个U盘。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072702.png" alt="windows072702.png"></p>
-<p>你又想了想，说不定姑娘那边也没有可以备份数据的设备。</p>
-<p>你嘴角上扬，这点难度对于你来说只是Easy等级。</p>
-<p>半小时后，你带着装好刻录好PE的U盘和移动硬盘出了门。</p>
-<h3 id="3-修电脑行规第二条：找你修电脑的人从没做错过什么"><a href="#3-修电脑行规第二条：找你修电脑的人从没做错过什么" class="headerlink" title="3.修电脑行规第二条：找你修电脑的人从没做错过什么"></a>3.修电脑行规第二条：找你修电脑的人从没做错过什么</h3><p>一路上时间过得很快。</p>
-<p>因为在你的脑海里面已经想过了所有可能出现的故障原因。</p>
-<p>你来到了姑娘住的地方。</p>
-<p>她很开心，你一进屋就给你泡了一杯茶。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072703.png" alt="windows072703.png"></p>
-<p>你坐下，开始与她交谈。</p>
-<p>在你反复询问之后，姑娘只了给你两个回答：</p>
-<p>我并没有乱点什么。</p>
-<p>以及，<strong>它突然就这样了。</strong></p>
-<p>你很欣慰。</p>
-<p>因为姑娘没有粗暴地告诉你：</p>
-<p>“你不是什么都会吗，怎么连这个都不知道”。</p>
-<p>那一刻，你连你们的孩子应该在哪里上小学都想好了。</p>
-<h3 id="4-存在即合理。–黑格尔"><a href="#4-存在即合理。–黑格尔" class="headerlink" title="4.存在即合理。–黑格尔"></a>4.存在即合理。–黑格尔</h3><p>你效率很高，打开了电脑。</p>
-<p>然后发现自己还是太年轻。</p>
-<p>因为屏幕右下角赫然显示着一行大字：</p>
-<p>您的开机时间<strong>4分59秒</strong>，已击败1%的电脑。</p>
-<p>在你看来。</p>
-<p>几乎是这样的。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072704.png" alt="windows072704.png"></p>
-<p>现实世界里的5分钟很快。</p>
-<p>而虚拟世界很慢。</p>
-<p>你觉得这是龟速，而姑娘则毫无反应。</p>
-<p>这让你感到绝望，因为这表示你们是两个世界的人。</p>
-<p>你抱着试一试的心态。</p>
-<p>想看看能不能不用重装系统。</p>
-<p>于是看着右下角不停闪动的数十个小图标。</p>
-<p>你知道一场大屠杀在所难免。</p>
-<p>你问姑娘哪些可以删掉。</p>
-<p>姑娘说全部都有用。</p>
-<p>你说这样开机会很慢。</p>
-<p>姑娘说她用了半年已习惯。</p>
-<p>于是这个有耐心的姑娘在你眼中越来越接近贤妻良母的形象。</p>
-<h3 id="5-科技是第一生产力"><a href="#5-科技是第一生产力" class="headerlink" title="5.科技是第一生产力"></a>5.科技是第一生产力</h3><p>你告诉姑娘。</p>
-<p>这些软件都免不了被删除的命运。</p>
-<p>因为你即将重装系统。</p>
-<p>血洗整个C盘。</p>
-<p>这时姑娘表现出来一丝怜悯。</p>
-<p>难道就只有这一个办法了吗？</p>
-<p>只有这一个办法。</p>
-<p>你坚定地说道。</p>
-<p>有哪些需要保存的文件赶紧挪到其他盘里。</p>
-<p>姑娘听你的话。</p>
-<p>打开血槽已经见红的C盘。</p>
-<p>与之相对的是空空如也的D盘。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072705.png" alt="windows072705.png"></p>
-<p>但她什么都没有移动，说道：</p>
-<p>我不知道哪些是我需要保存的。</p>
-<p>你心中有数，她自然是看不懂那些文件夹的意思。</p>
-<p>于是你问：</p>
-<p>办公文件还有视频什么的有没有。</p>
-<p>姑娘说没有，我的办公文件都存在公司的电脑里，视频都是用恨奇艺，劣酷，腾慢看的，偶尔还去C站看动漫。对了最近有一部电视剧很火你看了吗。</p>
-<p>长久以来的自我训练让你有了迅速提取关键词的能力。</p>
-<p>上一句话中的有用信息只有两个字：没有。</p>
-<p>于是你自动屏蔽了无用信息。</p>
-<p>你默念了一遍：没有。</p>
-<p>于是姑娘不再说话，让你安心做事。</p>
-<p>嗯，科技是第一生产力。</p>
-<h3 id="6-天下武功，唯快不破"><a href="#6-天下武功，唯快不破" class="headerlink" title="6.天下武功，唯快不破"></a>6.天下武功，唯快不破</h3><p>你开始重装系统。</p>
-<p>姑娘想要学习你的操作。</p>
-<p>你欣然同意。</p>
-<p>在以往十余载的人生中。</p>
-<p>你已对BIOS设置驾轻就熟。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072706.png" alt="windows072706.png"></p>
-<p>你炫技式的操作快得让自己颅内高潮。</p>
-<p>电光火石之间你已按下F10并敲下了回车键。</p>
-<p>系统重启。</p>
-<p>姑娘说你太快了想再来一遍。</p>
-<p>虽然哪里不对但你依然当做是一种夸奖。</p>
-<p>于是你再次演示。</p>
-<p>姑娘似懂非懂，不明亦觉厉。</p>
-<p>你面如平湖。</p>
-<p>且看熟悉的Windows PE缓缓在屏幕上展开。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072707.png" alt="windows072707.png"></p>
-<h3 id="7-祖师爷都无法搭救"><a href="#7-祖师爷都无法搭救" class="headerlink" title="7.祖师爷都无法搭救"></a>7.祖师爷都无法搭救</h3><p>姑娘看着Windows PE很开心。</p>
-<p>以为你已经装好。</p>
-<p>而你却说不是，这才刚刚开始。</p>
-<p>接着依然是姑娘看不懂的操作。</p>
-<p>几下便开始了装机。</p>
-<p>出现这个界面的时候。</p>
-<p><img src="http://img.yaohui.world/images/2020/06/15/windows072708.jpg" alt="windows072708.jpg"></p>
-<p>你知道稳了。</p>
-<p>姑娘说她认识这个，这个是太极。</p>
-<p>你说不是，这个是祖师爷。</p>
-<p>姑娘以为你信道教。</p>
-<p>你却说你是根正苗红的唯物主义者。</p>
-<p>你忘了，这个时候的你应该回答你会看手相。</p>
-<h3 id="8-You‘re-what-you-experience"><a href="#8-You‘re-what-you-experience" class="headerlink" title="8.You‘re what you experience."></a>8.You‘re what you experience.</h3><p>十几分钟，系统装载完毕。</p>
-<p>一切顺利，进入了新系统。</p>
-<p>姑娘说辛苦你了。</p>
-<p>你说小事情。</p>
-<p>你问还有什么软件要安装。</p>
-<p>她说常用的都装上。</p>
-<p>你话不多说，几分钟搞定。</p>
-<p>当她看到熟悉的软件又回来的时候。</p>
-<p>高兴的样子像极了你以后的女朋友。</p>
-<p>然而姑娘说：再装一个杀毒软件吧。</p>
-<p>马上让你陷入了深深的回忆。</p>
-<p>你的脑海里无数个声音在回响：</p>
-<p>我电脑越用越慢，你推荐的是什么垃圾杀毒软件。</p>
-<p>你的杀毒软件一点用都没有，我电脑还是中毒了。</p>
-<p>这个杀毒软件老是把其他软件阻止了，怎么把它卸了。</p>
-<p>你根本就不会修电脑！</p>
-<p>。。。。</p>
-<p>你回到现实，惊恐地拒绝了姑娘的请求。</p>
-<p>姑娘不解。</p>
-<p>央求你推荐一个。</p>
-<p>你几乎跪下。</p>
-<p>表示自己从来不用杀毒软件。</p>
-<p>姑娘一脸疑惑。</p>
-<p>但不再追问。</p>
-<p>你心中默念。</p>
-<p>修电脑行规第三条：绝不帮人装任何杀毒软件。</p>
-<h3 id="9-西西弗斯的石头"><a href="#9-西西弗斯的石头" class="headerlink" title="9.西西弗斯的石头"></a>9.西西弗斯的石头</h3><p>关了电脑，你松了一口气。</p>
-<p>不过是结束了一次毫无悬念的修理。</p>
-<p>姑娘很开心。</p>
-<p>说要请你吃饭。</p>
-<p>你欣然应允。</p>
-<p>姑娘说她男朋友也快回来了。</p>
-<p>你们三人可以一起吃。</p>
-<p>悲伤来得太快。</p>
-<p>你只能消化。</p>
-<p>这时一个电话响起。</p>
-<p>是另一个姑娘。</p>
-<p>我电脑出问题了，快帮我看看。</p>
-<p>你沉吟半响。</p>
-<p>回答道：</p>
-<p>我马上来。</p>
-<h3 id="10-修电脑第一条行规"><a href="#10-修电脑第一条行规" class="headerlink" title="10.修电脑第一条行规"></a>10.修电脑第一条行规</h3><p>临别前你问姑娘。</p>
-<p>为什么不让自己的男朋友来修电脑。</p>
-<p>她说怕耽误他和朋友打球。</p>
-<p>那时你感受到自己心里某一块，又坚硬了一点。</p>
-<p>路上，你给刚才打电话来的那个姑娘回了过去。</p>
-<p>”你男朋友在不在身边“。</p>
-<p>“他在，可是他不会啊”。</p>
-<p>”那你重启一下试试“。</p>
-<p>这时候你终于回想起。</p>
-<p>修电脑是有第一条行规的。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在我学习 ansible 的时候，其官方文档中提到使用 ssh-agent 来管理密钥，用于免密登录远程节点；经过我的努力研究，终于参透其理，下述通过 <a href="https://baike.baidu.com/item/5W1H" target="_blank" rel="noopener">5W1H</a> 方法对它的使用进行简单的总结：</p>
+<h2 id="What—什么是-ssh-agent"><a href="#What—什么是-ssh-agent" class="headerlink" title="What—什么是 ssh-agent ?"></a>What—什么是 ssh-agent ?</h2><p>SSH-Agent 是一个代理程序，用于帮助我们管理<a href="https://poison77.com/2020/05/30/ssh-key/" target="_blank" rel="noopener">私钥</a>，可以存储用户的身份密钥(<a href="https://www.ssh.com/ssh/identity-key" target="_blank" rel="noopener">identity keys</a>)和密钥密码(<a href="https://www.ssh.com/ssh/passphrase" target="_blank" rel="noopener">passphrases</a>)</p>
+<h2 id="Where—哪里会用到-ssh-agent-？"><a href="#Where—哪里会用到-ssh-agent-？" class="headerlink" title="Where—哪里会用到 ssh-agent ？"></a><strong>Where</strong>—哪里会用到 ssh-agent ？</h2><ol>
+<li>使用不同的密钥连接到不同的主机时，需要手动指定对应的密钥，ssh代理可以帮助我们选择对应的密钥进行认证，不用手动指定密钥即可进行连接；</li>
+<li>当私钥设置了密码，我们又需要频繁的使用私钥进行认证时，ssh代理可以帮助我们免去重复的输入密码的操作。</li>
+</ol>
+<h2 id="When—什么时候会用到-ssh-agent-？"><a href="#When—什么时候会用到-ssh-agent-？" class="headerlink" title="When—什么时候会用到 ssh-agent ？"></a><strong>When</strong>—什么时候会用到 ssh-agent ？</h2><p>当你已经将服务器对应的密钥和密码添加到 ssh-agent中，此时使用 SSH 登陆其他服务器时 ssh-agent 就会自动选择对应的是身份密钥和密钥密码进行身份验证。你只需要输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@ip地址</span><br></pre></td></tr></table></figure>
+<h2 id="Why—为什么要使用-ssh-agent-？"><a href="#Why—为什么要使用-ssh-agent-？" class="headerlink" title="Why—为什么要使用 ssh-agent ？"></a><strong>Why</strong>—为什么要使用 ssh-agent ？</h2><p>SSH-Agent代理程序可以让我们默认使用密钥登录其他服务器，而无需再次输入密码或 passphrases 。这实现了单点登录（SSO）的形式。</p>
+<h2 id="How—如何使用-ssh-agent"><a href="#How—如何使用-ssh-agent" class="headerlink" title="How—如何使用 ssh-agent ?"></a><strong>How</strong>—如何使用 ssh-agent ?</h2><p>[^注]:下述命令均基于 CentOS 7</p>
+<h3 id="启动ssh-agent"><a href="#启动ssh-agent" class="headerlink" title="启动ssh-agent"></a>启动ssh-agent</h3><p>它有两种启动方式，使用前需要确保你已经安装了 openssh ，最小化安装的系统需要安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install openssh-clients</span><br></pre></td></tr></table></figure>
+<p><strong>1、ssh-agent $SHELL</strong></p>
+<p>它会在当前的 shell 中启动一个子 shell，ssh-agent 程序运行在这个子 shell 中，在 centos 中，$SEHLL 就是 bash。运行后可通过 pstree 命令来查看进程树：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] ssh-agent bash</span><br><span class="line">[root@localhost ~] pstree</span><br><span class="line">systemd─┬─VGAuthService</span><br><span class="line">        ├─sshd───sshd───bash───bash─┬─pstree</span><br><span class="line">        │                           └─ssh-agent   </span><br><span class="line">        </span><br><span class="line">[root@localhost ~] yum -y install psmisc   <span class="comment"># 如果没有 pstree 命令需要安装</span></span><br></pre></td></tr></table></figure>
+<p>此时就已经进入到了子 shell 中了，ssh-agent 也运行在这里，当我们退出当前的子 shell，ssh-agent 进程也会随之消失。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">[root@localhost ~] pstree</span><br><span class="line">systemd─┬─VGAuthService        </span><br><span class="line">        ├─sshd───sshd───bash───pstree</span><br></pre></td></tr></table></figure>
+<p><strong>2、eval ’ssh-agent‘</strong></p>
+<p>它会在当前 sheel 直接开启一个 ssh-agent 进程，并返回一个 PID 。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] <span class="built_in">eval</span> `ssh-agent`</span><br><span class="line">Agent pid 30406</span><br><span class="line">[root@localhost ~] pstree</span><br><span class="line">systemd─┬─VGAuthService        </span><br><span class="line">        ├─ssh-agent</span><br><span class="line">        ├─sshd───sshd───bash───pstree</span><br></pre></td></tr></table></figure>
+<p>此时即使退出当前 shell 连接，ssh-agent 进程依然存在。需要使用 <strong>ssh-agent -k</strong> 命令关闭该进程，如果当前的 shell 意外断开了，就只能通过 kill 命令来停止了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~] ssh-agent -k</span><br><span class="line"><span class="built_in">unset</span> SSH_AUTH_SOCK;</span><br><span class="line"><span class="built_in">unset</span> SSH_AGENT_PID;</span><br><span class="line"><span class="built_in">echo</span> Agent pid 30406 killed;</span><br><span class="line"></span><br><span class="line">[root@localhost ~] ps -ef | grep ssh-agent</span><br><span class="line">root      30406      1  0 20:01 ?        00:00:00 ssh-agent</span><br><span class="line">root      30549  30494  0 20:01 pts/0    00:00:00 grep --color=auto ssh-agent</span><br><span class="line">[root@localhost ~] <span class="built_in">kill</span> -9 30406</span><br></pre></td></tr></table></figure>
+<h3 id="将私钥添加到-ssh-agent"><a href="#将私钥添加到-ssh-agent" class="headerlink" title="将私钥添加到 ssh-agent"></a>将私钥添加到 ssh-agent</h3><p>这里我们在 ostack01 上提前生成了三对密钥，并远程安装至服务器 ostack02（不会的可以参考  <a href="https://poison77.com/2020/05/30/ssh-key" target="_blank" rel="noopener">为SSH设置密钥登录</a>），它们之间的关系如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">密钥名称</th>
+<th style="text-align:center">密钥密码</th>
+<th style="text-align:center">对应服务器</th>
+<th style="text-align:center">对应账户</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">id_rsa</td>
+<td style="text-align:center">root123</td>
+<td style="text-align:center">ostack02：192.168.60.143</td>
+<td style="text-align:center">root</td>
+</tr>
+<tr>
+<td style="text-align:center">id_rsa_empty</td>
+<td style="text-align:center">无</td>
+<td style="text-align:center">ostack02：192.168.60.143</td>
+<td style="text-align:center">user</td>
+</tr>
+<tr>
+<td style="text-align:center">id_rsa_admin</td>
+<td style="text-align:center">admin123</td>
+<td style="text-align:center">ostack02：192.168.60.143</td>
+<td style="text-align:center">admin</td>
+</tr>
+</tbody>
+</table>
+<p>此时我们分别使用三个密钥去免密登录 ostack02 的三个账户，你就会发现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.60.143</span><br><span class="line">ssh -i /root/.ssh/id_rsa_empty user@192.168.60.143</span><br><span class="line">ssh -i /root/.ssh/id_rsa_admin admin@192.168.60.143</span><br></pre></td></tr></table></figure>
+<ul>
+<li>每次登录 root 用户时还需要输入密钥密码</li>
+<li>每次登录 user 用户时还需要手动指定私钥</li>
+<li>每次登录 admin 用户时不仅需要指定私钥，还要输入密钥密码-*</li>
+</ul>
+<p>为什么使用了密钥之后登录服务器反而更加麻烦了？尤其当主机或账户过多时，每次登录都需要输入私钥密码，极其繁琐。此时，就需要用到 ssh-agent 了：</p>
+<p>[注]:需要保证 ssh-agent 已经运行，否则使用 ssh-add 命令会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack01 .ssh] ssh-add /root/.ssh/id_rsa</span><br><span class="line">Enter passphrase <span class="keyword">for</span> /root/.ssh/id_rsa: </span><br><span class="line">Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)</span><br><span class="line"></span><br><span class="line">[root@ostack01 .ssh] ssh-add /root/.ssh/id_rsa_empty</span><br><span class="line">Identity added: /root/.ssh/id_rsa_empty (/root/.ssh/id_rsa_empty)</span><br><span class="line"></span><br><span class="line">[root@ostack01 .ssh] ssh-add /root/.ssh/id_rsa_admin</span><br><span class="line">Enter passphrase <span class="keyword">for</span> /root/.ssh/id_rsa_admin: </span><br><span class="line">Identity added: /root/.ssh/id_rsa_admin (/root/.ssh/id_rsa_admin)</span><br></pre></td></tr></table></figure>
+<h3 id="使用密钥登录服务器"><a href="#使用密钥登录服务器" class="headerlink" title="使用密钥登录服务器"></a>使用密钥登录服务器</h3><p>SSH-Agent 可以帮我们管理密钥，在一个 SSH 会话中，只需要在添加时输入一次私钥密码，之后再次连接该服务器时则无需输入密钥密码即可成功登入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@ostack01 .ssh] ssh root@192.168.60.143</span><br><span class="line">Last login: Mon Jun 15 00:36:23 2020 from 192.168.60.139</span><br><span class="line">[root@ostack02 ~] <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.60.143 closed.</span><br><span class="line"></span><br><span class="line">[root@ostack01 .ssh] ssh -i /root/.ssh/id_rsa_empty user@192.168.60.143</span><br><span class="line">Last login: Mon Jun 15 00:36:17 2020 from 192.168.60.139</span><br><span class="line">[user@ostack02 ~]$ <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.60.143 closed.</span><br><span class="line"></span><br><span class="line">[root@ostack01 .ssh] ssh -i /root/.ssh/id_rsa_admin admin@192.168.60.143</span><br><span class="line">Last login: Mon Jun 15 00:38:18 2020 from 192.168.60.139</span><br><span class="line">[admin@ostack02 ~]$ <span class="built_in">exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line">Connection to 192.168.60.143 closed.</span><br></pre></td></tr></table></figure>
+<p>由此可见 <strong>ssh-agent可以帮助我们免去重复输入私钥密码的操作</strong>，但还是需要指定密钥。</p>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><p>最后总结一下常用的命令：</p>
+<p>ssh-agent 常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">usage: ssh-agent [-c | -s] [-Dd] [-a bind_address] [-E fingerprint_hash]</span><br><span class="line">                 [-P pkcs11_whitelist] [-t life] [<span class="built_in">command</span> [arg ...]]</span><br><span class="line">       ssh-agent [-c | -s] -k</span><br><span class="line">Options:</span><br><span class="line">  -a bind_address           	强制将 Unix 域套接字绑定到给定的文件路径，而不是默认套接字</span><br><span class="line">  -c          			强制在标准输出上生成 C-shell 命令。默认情况下，会自动检测到 shell</span><br><span class="line">  -d          			启用调试模式</span><br><span class="line">  -E fingerprint_hash       	指定用于生成 SSH 密钥的算法。有效值包括md5和sha256。</span><br><span class="line">  -k          			杀死当前正在运行的 ssh-agent 进程</span><br><span class="line">  -s          			强制/bin/sh在标准输出上生成 Bourne shell 命令。默认情况下，会自动检测 shell</span><br><span class="line">  -t life         		指定密钥在 ssh-agent 中的有效期。默认将密钥保留在其内存中</span><br></pre></td></tr></table></figure>
+<p>ssh-add 常用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">usage: ssh-add [options] [file ...]</span><br><span class="line">Options:</span><br><span class="line">  -l          查看 ssh-agent 已经添加的私钥</span><br><span class="line">  -L          查看ssh-agent已经添加的私钥对应的公钥</span><br><span class="line">  -d          删除指定的私钥</span><br><span class="line">  -D          删除所有私钥</span><br><span class="line">  -x          锁定 ssh-agent 代理，必须输入密码，加锁后将不再提供任何服务</span><br><span class="line">  -X          解锁 ssh-agent 代理，需输入锁定密码</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -653,7 +551,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Windows/" rel="tag"><i class="fa fa-tag"></i> Windows</a>
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+            <a href="/tags/网络安全/" rel="tag"><i class="fa fa-tag"></i> 网络安全</a>
           
         </div>
       
@@ -666,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/27/cname-for-GitHubPages/" rel="next" title="为GitHub Pages添加域名解析">
-                <i class="fa fa-chevron-left"></i> 为GitHub Pages添加域名解析
+              <a href="/2020/05/30/ssh-key/" rel="next" title="为SSH设置密钥登录">
+                <i class="fa fa-chevron-left"></i> 为SSH设置密钥登录
               </a>
             
           </div>
@@ -675,10 +575,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/03/Excel-verification/" rel="prev" title="Excel中的“提示框”">
-                Excel中的“提示框” <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -865,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#每个会修电脑的BOY都有故事"><span class="nav-number">1.</span> <span class="nav-text">每个会修电脑的BOY都有故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-能力越大，责任也就越大"><span class="nav-number">1.1.</span> <span class="nav-text">1.能力越大，责任也就越大</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-没有什么是重启不能解决的，如果有，那就重装系统"><span class="nav-number">1.2.</span> <span class="nav-text">2.没有什么是重启不能解决的，如果有，那就重装系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-修电脑行规第二条：找你修电脑的人从没做错过什么"><span class="nav-number">1.3.</span> <span class="nav-text">3.修电脑行规第二条：找你修电脑的人从没做错过什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-存在即合理。–黑格尔"><span class="nav-number">1.4.</span> <span class="nav-text">4.存在即合理。–黑格尔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-科技是第一生产力"><span class="nav-number">1.5.</span> <span class="nav-text">5.科技是第一生产力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-天下武功，唯快不破"><span class="nav-number">1.6.</span> <span class="nav-text">6.天下武功，唯快不破</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-祖师爷都无法搭救"><span class="nav-number">1.7.</span> <span class="nav-text">7.祖师爷都无法搭救</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-You‘re-what-you-experience"><span class="nav-number">1.8.</span> <span class="nav-text">8.You‘re what you experience.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-西西弗斯的石头"><span class="nav-number">1.9.</span> <span class="nav-text">9.西西弗斯的石头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-修电脑第一条行规"><span class="nav-number">1.10.</span> <span class="nav-text">10.修电脑第一条行规</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What—什么是-ssh-agent"><span class="nav-number">2.</span> <span class="nav-text">What—什么是 ssh-agent ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where—哪里会用到-ssh-agent-？"><span class="nav-number">3.</span> <span class="nav-text">Where—哪里会用到 ssh-agent ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#When—什么时候会用到-ssh-agent-？"><span class="nav-number">4.</span> <span class="nav-text">When—什么时候会用到 ssh-agent ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why—为什么要使用-ssh-agent-？"><span class="nav-number">5.</span> <span class="nav-text">Why—为什么要使用 ssh-agent ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How—如何使用-ssh-agent"><span class="nav-number">6.</span> <span class="nav-text">How—如何使用 ssh-agent ?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动ssh-agent"><span class="nav-number">6.1.</span> <span class="nav-text">启动ssh-agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将私钥添加到-ssh-agent"><span class="nav-number">6.2.</span> <span class="nav-text">将私钥添加到 ssh-agent</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用密钥登录服务器"><span class="nav-number">6.3.</span> <span class="nav-text">使用密钥登录服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">6.4.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></div>
             
 
           </div>
