@@ -32,7 +32,15 @@ function hnceTimer(){
 
 function fun(){
 var date=new Date();
-document.getElementById("timenow").innerHTML="0"+(date.getMonth()+1)+"月"+"0"+(date.getDay()-1)+"日"+"  "+date.getHours()+":"+date.getMinutes()+"    "
+var month = date.getMonth() + 1;
+var strDate = date.getDate();
+     if (month >= 1 && month <= 9) {
+          month = "0" + month;
+     }
+     if (strDate >= 0 && strDate <= 9) {
+          strDate = "0" + strDate;
+     }
+document.getElementById("timenow").innerHTML= month +"月"+ strDate +"日"+"  "+date.getHours()+":"+date.getMinutes()+"    "
 }
 setInterval(fun,1000)
 
